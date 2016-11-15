@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "auto_init.txt");
                 try {
                     FileWriter fw = new FileWriter(file);
-                    fw.write(settings[0] + "\n" + settings[1] + "\n" + settings[2]);
+                    fw.write((settings[0] ? "t" : "f") + (settings[1] ? "t" : "f") + (settings[2] ? "t" : "f"));
                     fw.close();
                     Toast.makeText(getApplicationContext(), "Wrote to autonomous settings file (" +
                             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath() + "/auto_init.txt)", Toast.LENGTH_LONG).show();
